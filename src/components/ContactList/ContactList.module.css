@@ -1,0 +1,43 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+}
+
+.button {
+  background-color: whitesmoke;
+  border: none;
+  color: black;
+  padding: 5px;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 15px;
+  margin: 4px 2px;
+  transition: 0.3s;
+  cursor: pointer;
+  width: 200px;
+}
+.button:hover {
+  background-color: rgb(165, 66, 165);
+  color: white;
+}
+.container {
+  border-radius: 5px;
+  background-color: rgb(209, 112, 209);
+  padding: 10px;
+}
+.list {
+  padding-left: 10px;
+  margin: 0;
+}
