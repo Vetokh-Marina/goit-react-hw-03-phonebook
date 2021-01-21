@@ -46,6 +46,23 @@ class App extends Component {
       contacts: prevState.contacts.filter(contact => contact.id !== contactId),
     }));
   };
+  
+//Взять из localStorage ранее сохраненные данные
+  componentDidMount() {
+    const contacts = localStorage.getItem('contacts');
+    const parsedContacts = JSON.parse(contacts);
+    if(parsedContacts) {
+      this.setState({ contacts: parsedContacts });
+    }
+  }
+  //Сохранить в localStorage
+  componentDidUpdate(prevState,prevProps) {
+    if (this.state.contacts !== prevState.contacts) {
+      console.log('Обновилось поле контактов');
+      //Записывает в хранилище localStorage
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    }
+  };
 
   render() {
     const { filter, contacts } = this.state;
